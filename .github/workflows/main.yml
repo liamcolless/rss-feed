@@ -2,8 +2,8 @@ name: Update RSS Feed
 
 on:
   schedule:
-    # Runs at 00:00 UTC daily
-    - cron: '0 0 * * *'
+    # Runs at 10:20 AM UTC daily
+    - cron: '20 10 * * *'
 
 jobs:
   update_rss:
@@ -14,14 +14,14 @@ jobs:
 
     - name: Update RSS
       run: |
-        echo "032c_rss.xml"
+        echo "Your script to update the RSS feed goes here"
         # For example, a Python script that generates the RSS feed
         # python update_rss.py
 
     - name: Commit and Push
       run: |
-        git config --global user.email "you@example.com"
-        git config --global user.name "Your Name"
+        git config --global user.email "liamcolless@github.com"
+        git config --global user.name "liamcolless"
         git add 032c_rss.xml
         git commit -m "Update RSS feed" || echo "No changes to commit"
         git push
